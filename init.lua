@@ -318,7 +318,7 @@ vim.defer_fn(function()
         -- Add languages to be installed here that you want installed for treesitter
         ensure_installed = {
             'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript',
-            'typescript', 'vimdoc', 'vim', 'bash'
+            'typescript', 'vimdoc', 'vim', 'bash', 'elixir', 'clojure', 'kotlin', 'java'
         },
 
         -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
@@ -466,13 +466,25 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-    -- clangd = {},
-    -- gopls = {},
-    -- pyright = {},
-    -- rust_analyzer = {},
-    -- tsserver = {},
-    -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
+    clangd = {},
+    gopls = {},
+    pyright = {},
+    rust_analyzer = {},
+    tsserver = {},
+    html = { filetypes = { 'html', 'twig', 'hbs'} },
+    mdx_analyzer = {},
+    texlab={},
+    julials={},
+    jdtls={},
+    gleam={},
+    elixirls={},
+    cucumber_language_server={},
+    cssls={},
+    astro={},
+    bashls={},
+    sqlls = {},
+    clojure_lsp={},
+    teal_ls = {},
     lua_ls = {
         Lua = {
             workspace = {checkThirdParty = false},
@@ -542,7 +554,7 @@ cmp.setup {
             end
         end, {'i', 's'})
     },
-    sources = {{name = 'nvim_lsp'}, {name = 'luasnip'}}
+    sources = {{name = 'nvim_lsp'}, {name = 'luasnip'}},
 }
 
 local colemak_keymap = {
